@@ -13,6 +13,9 @@ namespace EuS
     {
         // Datenbank
         Db db = new Db();
+        //Spieler
+        public static List<Player> Players = new List<Player>();
+
         public EUS()
         {
             var Events = new Events();
@@ -21,6 +24,13 @@ namespace EuS
             API.onPlayerConnected += Events.OnClientConnected;
             API.onPlayerFinishedDownload += Events.OnPlayerFinishedDownload;
             API.onPlayerDisconnected += Events.OnClientDisconnected;
+        }
+
+        //Befehle
+        [Command("test")]
+        public void command_test(Client player)
+        {
+            API.sendChatMessageToPlayer(player, string.Format("Dein Name laut Accountsystem ist: {0}", "dsd"));
         }
     }
 }

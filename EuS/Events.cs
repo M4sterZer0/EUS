@@ -5,32 +5,33 @@ using System.Text;
 using System.Threading.Tasks;
 using GTANetworkServer;
 using GTANetworkShared;
+using EuS;
 
 namespace EuS
 {
     public class Events : Script
     {
-        internal void onResourceStart()
+        public void onResourceStart()
         {
             throw new NotImplementedException();
         }
 
-        internal void OnClientEvent(Client sender, string eventName, object[] arguments)
+        public void OnClientEvent(Client sender, string eventName, object[] arguments)
         {
             throw new NotImplementedException();
         }
 
-        internal void OnClientConnected(Client player)
+        public void OnClientConnected(Client player)
+        {
+            EUS.Players.Add(player);
+        }
+
+        public void OnPlayerFinishedDownload(Client player)
         {
             throw new NotImplementedException();
         }
 
-        internal void OnPlayerFinishedDownload(Client player)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void OnClientDisconnected(Client player, string reason)
+        public void OnClientDisconnected(Client player, string reason)
         {
             throw new NotImplementedException();
         }
