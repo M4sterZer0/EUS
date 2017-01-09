@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<meta>
+  <info name="European-Streets" description="European-Streets Gamemode" author= "European-Streets Development Team" version="1.0" />
+
+  <!-- FILE -->
+  <file src="ClientFiles/functions.js" />
+  <file src="ClientFiles/login.html" />
+
+  <!-- SCRIPTS -->
+  <script src="EuS.dll" type="server" lang="compiled" />
+  <script src="ServerFiles/server.js" type="client" lang="javascript" />
+  
+</meta>
