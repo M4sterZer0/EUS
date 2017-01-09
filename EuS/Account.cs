@@ -11,12 +11,6 @@ namespace EuS
     {
         public Client client { get; set; }
 
-        public Player() { }
-        public Player(Client client)
-        {
-            this.client = client;
-        }
-
         public int userID { get; set; }
         public string userName { get; set; }
         public string userPasswort { get; set; }
@@ -47,5 +41,23 @@ namespace EuS
         public int userWanteds { get; set; }
         public int userJobID { get; set; }
         public int userJobDuty { get; set; }
+
+        public Player() { }
+        public Player(Client client)
+        {
+            this.client = client;
+        }
+
+        public static Player getPlayer(Client player)
+        {
+            foreach (Player p in EUS.Players)
+            {
+                if (p.client == player)
+                {
+                    return p;
+                }
+            }
+            return null;
+        }
     }
 }

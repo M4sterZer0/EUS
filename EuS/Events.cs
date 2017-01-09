@@ -23,7 +23,7 @@ namespace EuS
 
         public void OnClientConnected(Client player)
         {
-            EUS.Players.Add(player);
+            EUS.Players.Add(new Player(player));
         }
 
         public void OnPlayerFinishedDownload(Client player)
@@ -33,7 +33,8 @@ namespace EuS
 
         public void OnClientDisconnected(Client player, string reason)
         {
-            throw new NotImplementedException();
+            var p = Player.getPlayer(player);
+            EUS.Players.Remove(p);
         }
     }
 }
