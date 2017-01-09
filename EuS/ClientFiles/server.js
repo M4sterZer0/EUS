@@ -36,5 +36,5 @@ API.onServerEventTrigger.connect(function (eventName, args) {
 });
 
 function login(username, password) {
-    API.triggerServerEvent("closeLogin", username, pass);
+    API.triggerServerEvent("closeLogin", username, password);
 }

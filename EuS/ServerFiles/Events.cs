@@ -15,16 +15,19 @@ namespace EuS
         Db db = new Db();
         public void onResourceStart()
         {
-            throw new NotImplementedException();
+            //Ingame-Uhrzeit zum Start auf die aktuelle Uhrzeit setzen
+            API.setTime(DateTime.Now.Hour, DateTime.Now.Minute);
         }
 
         public void OnClientEvent(Client sender, string eventName, object[] arguments)
         {
             if (eventName == "closeLogin")
             {
+                API.sendChatMessageToPlayer(sender, string.Format("Username: {0} Passwort: {1}", arguments[0].ToString(), arguments[1].ToString()));
                 db.bind("username", arguments[0].ToString());
                 db.bind("passwort", arguments[1].ToString());
-                string[] details = db.row("SELECT * FROM User WHERE Name = @username AND Passwort = md5(md5(@passwort))");
+                string[] details = db.row("SELECT * FROM User WHERE Name = @username AND Passwort = @passwort");
+                API.sendChatMessageToPlayer(sender, "Existiert?: " + details.Length);
                 if (details.Length == 0)
                 {
                     //Account existiert nicht
@@ -60,6 +63,7 @@ namespace EuS
                     tmpPlayer.userJobID = Convert.ToInt32(details.GetValue(28));
                     tmpPlayer.userJobDuty = Convert.ToInt32(details.GetValue(29));
                     tmpPlayer.userLoggedin = true;
+                    API.sendNativeToPlayer(sender, HashFunctions.DO_SCREEN_FADE_IN, 10000);
                 }
             }
         }
@@ -67,11 +71,21 @@ namespace EuS
         public void OnClientConnected(Client player)
         {
             EUS.Players.Add(new Player(player));
+            //API.sendNativeToPlayer(player, HashFunctions.DO_SCREEN_FADE_OUT, 1);
         }
 
         public void OnPlayerFinishedDownload(Client player)
         {
-            throw new NotImplementedException();
+            API.triggerClientEvent(player, "showWindow", "login");
+            db.bind("username", player.name);
+            string[] details = db.row("SELECT * FROM User WHERE Name = @username");
+            if (details.Length == 0)
+            {
+                API.triggerClientEvent(player, "showWindow", "register");
+            } else
+            {
+                API.triggerClientEvent(player, "showWindow", "login");
+            }
         }
 
         public void OnClientDisconnected(Client player, string reason)

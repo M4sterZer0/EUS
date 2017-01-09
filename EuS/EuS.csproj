@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="ServerFiles\Account.cs" />
     <Compile Include="ServerFiles\Datenbank.cs" />
+    <Compile Include="ServerFiles\HashFunctions.cs" />
     <Compile Include="ServerFiles\Main.cs" />
     <Compile Include="ServerFiles\Events.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,9 +72,10 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="ClientFiles\functions.js" />
+    <Content Include="ClientFiles\jquery.js" />
     <Content Include="ClientFiles\login.html" />
     <Content Include="meta.xml" />
-    <Content Include="ServerFiles\server.js" />
+    <Content Include="ClientFiles\server.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
