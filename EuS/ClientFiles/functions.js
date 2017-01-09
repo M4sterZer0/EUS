@@ -1,6 +1,6 @@
 ﻿function loginPlayer() {
     resourceCall("login", $("#username").val(), $("#pass").val());
-    $("#loginb").prop("disabled", true);
+    $("#loginbutton").prop("disabled", true);
     setTimeout(function () { $("#loginbutton").prop("disabled", false); }, 1500);
 }
 
