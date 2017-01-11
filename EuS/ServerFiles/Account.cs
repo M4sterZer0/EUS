@@ -47,6 +47,7 @@ namespace EuS
         public Player(Client client)
         {
             this.client = client;
+            this.userLoggedin = false;
         }
 
         public static Player getPlayerAccount(Client player)

@@ -63,6 +63,8 @@ namespace EuS
                     tmpPlayer.userJobID = Convert.ToInt32(result.Rows[0][28]);
                     tmpPlayer.userJobDuty = Convert.ToInt32(result.Rows[0][29]);
                     tmpPlayer.userLoggedin = true;
+
+                    API.setPlayerSkin(sender, API.pedNameToModel(tmpPlayer.userSkin));
                     API.triggerClientEvent(sender, "hideWindow", "login");
                     API.sendNativeToPlayer(sender, HashFunctions.DO_SCREEN_FADE_IN, 10000);
                     API.freezePlayer(sender, false);
