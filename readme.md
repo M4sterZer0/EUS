@@ -6,5 +6,12 @@
 Führe die makeserver.bat aus.
 Es wird für dich ein fertiger Server-Ordner erstellt.
 ![](https://i.imgur.com/i8xBcwh.png)
+## "database" Resource
+Wird benötigt für die Datenbank!
+```
+<resource src="database" />
+<resource src="eus" />
+````
+
 # WICHTIG!
 Ändere ***nichts*** im Ordner "server"!
