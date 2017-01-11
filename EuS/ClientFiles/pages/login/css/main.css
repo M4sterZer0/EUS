@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i');
+
+body {
+	background-color: rgb(35,49,58);
+	margin: 0;
+	padding: 0;
+}
+input[type="text"], input[type="password"], textarea, select { 
+    outline: none;
+}
+input:focus::-webkit-input-placeholder { color:transparent; transition: color 0.5s ease-in-out; }
+input:focus:-moz-placeholder { color:transparent; transition: color 0.5s ease-in-out; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; transition: color 0.5s ease-in-out; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; transition: color 0.5s ease-in-out; } /* IE 10+ */
+.container {
+	width: 300px;
+	min-height: 378px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -150px;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.row {
+	margin-left: auto;
+	margin-right: auto;
+}
+.logo {
+	background-image: url(../img/logo.png);
+	width: 200px;
+	height: 46px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+}
+.login-box-title {
+	background-color: #273742;
+	width: 100%;
+	height: 80px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	-moz-border-top-left-radius: 5px;
+	-moz-border-top-right-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	margin-bottom: -15px;
+}
+.login-box-title content {
+	display: block;
+	line-height: 80px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 24px;
+	font-weight: 300;
+	color: #EFEFEF;
+	text-align: center;
+}
+.login-box {
+	background-color: #2d404c;
+	width: 100%;
+	height: auto;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	-moz-border-bottom-left-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+}
+.login-box p {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 13px;
+	font-weight: 200;
+	color: #EFEFEF;
+	padding: 15px;
+	text-align: center;
+}
+form {
+	width: 240px;
+	margin-left: 30px;
+	padding-bottom: 10px;
+}
+form input.eus-field {
+	width: 100%;
+	height: 40px;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid rgb(35,49,58);
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	color: #EFEFEF;
+}
+form input.eus-field {
+	border-bottom: 1px solid #273742;
+}
+.form-control {
+	padding-top: 5px;
+}
+.form-control p {
+	background-color: #273742;
+	height: auto;
+	padding: 10px 5px;
+	color: #FF0000;
+	font-size: 13px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.button {
+	background-color: transparent;
+	background-image: url(../img/login.png);
+	border: none;
+	width: 40px;
+	height: 40px;
+	margin-top: 15px;
+}
+.footer {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	margin-bottom: 10px;
+	font-size: 11px;
+	color: rgba(255,255,255,0.4);
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+}

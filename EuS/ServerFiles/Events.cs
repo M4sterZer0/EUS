@@ -32,11 +32,7 @@ namespace EuS
                     API.triggerClientEvent(sender, "setLoginmessage", "<span style=\"color: white;\">Das Passwort ist falsch.</span>");
                 } else
                 {
-                    API.delay(10000, true, () =>
-                    {
-                        API.triggerClientEvent(sender, "setLoginmessage", "<span style=\"color: green;\">Du hast dich erfolgreich eingeloggt!</span>");
-                    });
-                    sender.position = new Vector3(-141.1987, -620.913, 168.8205);
+                    sender.position = new Vector3(-540.0245, -212.8223, 37.64985);
                     var tmpPlayer = Player.getPlayerAccount(sender);
                     tmpPlayer.userName = result.Rows[0][1].ToString().Replace(".", " ").Replace("_", " ");
                     tmpPlayer.userBank = Convert.ToInt32(result.Rows[0][3]);
@@ -69,6 +65,7 @@ namespace EuS
                     tmpPlayer.userLoggedin = true;
                     API.triggerClientEvent(sender, "hideWindow", "login");
                     API.sendNativeToPlayer(sender, HashFunctions.DO_SCREEN_FADE_IN, 10000);
+                    API.freezePlayer(sender, false);
                 }
             }
         }
@@ -76,7 +73,8 @@ namespace EuS
         public void OnClientConnected(Client player)
         {
             EUS.Players.Add(new Player(player));
-            //API.sendNativeToPlayer(player, HashFunctions.DO_SCREEN_FADE_OUT, 1);
+            API.freezePlayer(player, true);
+            API.sendNativeToPlayer(player, HashFunctions.DO_SCREEN_FADE_OUT, 1);
         }
 
         public void OnPlayerFinishedDownload(Client player)
