@@ -1,7 +1,7 @@
 ﻿function loginPlayer() {
-    resourceCall("login", $("#username").val(), $("#pass").val());
-    $("#loginbutton").prop("disabled", true);
-    setTimeout(function () { $("#loginbutton").prop("disabled", false); }, 1500);
+    $("#u344-3").prop("disabled", true);
+    resourceCall("login", $("#widgetu355_input").val());
+    setTimeout(function () { $("#u344-3").prop("disabled", false); }, 1500);
 }
 
 function setName(name) {
@@ -9,5 +9,5 @@ function setName(name) {
 }
 
 function setLoginmessage(text) {
-    $("#message").html(text);
+    $("#u403-2").html(text);
 }

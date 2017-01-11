@@ -5,8 +5,28 @@
   <!-- FILE -->
   <file src="ClientFiles/jquery.js" />
   <file src="ClientFiles/functions.js" />
-  <file src="ClientFiles/login.html" />
-
+  
+  <!-- LOGIN PAGE-->
+  <file src="ClientFiles/pages/login/login.html" />
+  <file src="ClientFiles/pages/login/css/index.css" />
+  <file src="ClientFiles/pages/login/css/login.css" />
+  <file src="ClientFiles/pages/login/css/master_a-musters.css" />
+  <file src="ClientFiles/pages/login/css/site_global.css" />
+  <file src="ClientFiles/pages/login/images/1482723785_basics-15.svg" />
+  <file src="ClientFiles/pages/login/images/1482723785_basics-15_poster_u300.png" />
+  <file src="ClientFiles/pages/login/images/add.svg" />
+  <file src="ClientFiles/pages/login/images/add_poster_.png" />
+  <file src="ClientFiles/pages/login/images/bildmaterial 2_poster_.png" />
+  <file src="ClientFiles/pages/login/images/bildmaterial-2.svg" />
+  <file src="ClientFiles/pages/login/scripts/jquery.musepolyfill.bgsize.js" />
+  <file src="ClientFiles/pages/login/scripts/jquery.watch.js" />
+  <file src="ClientFiles/pages/login/scripts/jquery-1.8.3.min.js" />
+  <file src="ClientFiles/pages/login/scripts/museconfig.js" />
+  <file src="ClientFiles/pages/login/scripts/museutils.js" />
+  <file src="ClientFiles/pages/login/scripts/require.js" />
+  <file src="ClientFiles/pages/login/scripts/webpro.js" />
+  <file src="ClientFiles/pages/login/scripts/whatinput.js" />
+  
   <!-- SCRIPTS -->
   <script src="EuS.dll" type="server" lang="compiled" />
   <script src="ClientFiles/server.js" type="client" lang="javascript" />

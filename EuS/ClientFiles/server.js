@@ -1,5 +1,6 @@
 ﻿var player = API.getLocalPlayer();
 var cefLoginWindow = null;
+var cefRegisterWindow = null;
 
 API.onServerEventTrigger.connect(function (eventName, args) {
     switch (eventName) {
@@ -10,7 +11,7 @@ API.onServerEventTrigger.connect(function (eventName, args) {
                 cefLoginWindow = API.createCefBrowser(res.Width, res.Height);
                 API.setCefBrowserPosition(cefLoginWindow, 1, 1);
                 API.waitUntilCefBrowserInit(cefLoginWindow);
-                API.loadPageCefBrowser(cefLoginWindow, "ClientFiles/login.html");
+                API.loadPageCefBrowser(cefLoginWindow, "ClientFiles/pages/login/login.html");
                 if (API.isCefBrowserInitialized(cefLoginWindow)) {
                     API.sleep(100);
                     API.showCursor(true);
@@ -31,10 +32,11 @@ API.onServerEventTrigger.connect(function (eventName, args) {
         case 'setLoginmessage': {
             if (cefLoginWindow != null)
                 cefLoginWindow.call("setLoginmessage", args[0]);
+            break;
         }
     }
 });
 
-function login(username, password) {
-    API.triggerServerEvent("closeLogin", username, password);
+function login(password) {
+    API.triggerServerEvent("closeLogin", password);
 }

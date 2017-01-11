@@ -5,15 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using GTANetworkServer;
 using GTANetworkShared;
-using Datenbank;
 using System.Timers;
 
 namespace EuS
 {
     public class EUS : Script
     {
-        // Datenbank
-        Db db = new Db();
         //Spieler
         public static List<Player> Players = new List<Player>();
 

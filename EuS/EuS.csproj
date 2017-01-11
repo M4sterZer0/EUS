@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ServerFiles\Account.cs" />
-    <Compile Include="ServerFiles\Datenbank.cs" />
     <Compile Include="ServerFiles\HashFunctions.cs" />
     <Compile Include="ServerFiles\Main.cs" />
     <Compile Include="ServerFiles\Events.cs" />
@@ -62,6 +61,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ServerFiles\Useful.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -73,8 +73,9 @@
   <ItemGroup>
     <Content Include="ClientFiles\functions.js" />
     <Content Include="ClientFiles\jquery.js" />
-    <Content Include="ClientFiles\login.html" />
-    <Content Include="meta.xml" />
+    <Content Include="meta.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ClientFiles\server.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
