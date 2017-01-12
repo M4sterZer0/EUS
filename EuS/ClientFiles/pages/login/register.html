@@ -2,8 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login-Bereich</title>
+<title>Register-Bereich</title>
 <link href="css/main.css" type="text/css" rel="stylesheet">
+<script src="../../jquery.js"></script>
+<script src="../../functions.js"></script>
 </head>
 
 <body>
@@ -15,10 +17,13 @@
 		</div>
 		<div class="login-box">
 			<form class="form-control">
-				<!--<p>Multiaccounts sind auf diesem Server nicht gestattet!</p>-->
-					<input type="password" class="eus-field" placeholder="Passwort">
-					<input type="password" class="eus-field" placeholder="Passwort wiederholen">
-					<center><button class="button"></button></center>
+				<p id="message"><span style="color: white;">Gib deine gewünschten Zugangsdaten ein</span></p>
+				<input type="text" class="eus-field" id="vorname" placeholder="Vorname: Max">
+				<input type="text" class="eus-field" id="nachname" placeholder="Nachname: Mustermann">
+				<input type="password" class="eus-field" id="pass" placeholder="Dein Passwort">
+				<input type="password" class="eus-field" id="passwdh" placeholder="Dein Passwort wiederholen">
+				<center><button class="button" id="button" type="button" onclick="registerPlayer();"></button></center>
+				<p><span style="color: white;" onclick="showLogin();">Du hast schon einen Account?</span></p>
 			</form>
 		</div>	
 	</div>	
