@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace EuS.ServerFiles
 {
+    public static class DoubleExtensions
+    {
+        public static string ToGBString(this double value)
+        {
+            return value.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-GB"));
+        }
+    }
     static class Useful
     {
         static public string sha256(string password)

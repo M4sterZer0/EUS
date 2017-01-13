@@ -4,10 +4,10 @@
   <script src="database.cs" type="server" lang="csharp" />
   
   <settings>
-    <setting name="database_server" value="european-streets.de" default="127.0.0.1"/>
+    <setting name="database_server" value="5.196.28.230" default="127.0.0.1"/>
     <setting name="database_port" value="3306" default="3306" />
     <setting name="database_user" value="eusdevelopment" default="root"/>
-    <setting name="database_password" value="_63Jgv0r" default=""/>
+    <setting name="database_password" value="9D0_pR.S" default=""/>
     <setting name="database_database" value="eusserver" default="gtanetwork" />
     <setting name="database_using_ssl" value="false" default="false" />
     <setting name="database_ssl_pfx_file" value="" default="" />

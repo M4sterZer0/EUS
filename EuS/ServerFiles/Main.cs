@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using GTANetworkServer;
 using GTANetworkShared;
 using System.Timers;
+using EuS.ServerFiles;
+using System.IO;
 
 namespace EuS
 {
@@ -41,5 +43,15 @@ namespace EuS
         {
             API.sendChatMessageToPlayer(player, string.Format("Dein Name laut Accountsystem ist: {0}", Player.getPlayerAccount(player).userName));
         }
+
+        [Command("save", "/save [Name des Ortes / kurze Beschreibung]", GreedyArg = true)]
+        public void Command_Pos(Client player, string name)
+        {
+            API.createTextLabel("Position von  ~g~" + player.name + "~w~ gespeichert, als: \"~g~" + name + "~w~\"!", player.position, 300.0f, 0.3f);
+            var pos = API.getEntityPosition(player);
+            var angle = API.getEntityRotation(player);
+            File.AppendAllText("savepos.txt", string.Format("{0}: {1} {2} {3} {4}", name, Convert.ToDouble(pos.X).ToGBString(), Convert.ToDouble(pos.Y).ToGBString(), Convert.ToDouble(pos.Z), Convert.ToDouble(pos.X).ToGBString(), Convert.ToDouble(pos.Y).ToGBString(), Convert.ToDouble(angle).ToGBString()) + System.Environment.NewLine);
+        }
+
     }
 }
