@@ -20,6 +20,14 @@ namespace EuS
             API.setTime(DateTime.Now.Hour, DateTime.Now.Minute);
         }
 
+        private void Delay(int ms, Action action)
+        {
+            new Task(() => {
+                API.sleep(ms);
+                action();
+            }).Start();
+        }
+
         public void OnClientEvent(Client sender, string eventName, object[] arguments)
         {
             if(eventName == "closeRegister")
@@ -164,7 +172,17 @@ namespace EuS
 
         public void OnPlayerFinishedDownload(Client player)
         {
-            API.triggerClientEvent(player, "showWindow", "login");
+            if(!player.isCEFenabled)
+            {
+                API.sendChatMessageToPlayer(player, "~r~Du musst CEF aktivieren um hier spielen zu können!");
+                Delay(5000, () =>
+                {
+                    API.kickPlayer(player);
+                });
+            } else
+            {
+                API.triggerClientEvent(player, "showWindow", "login");
+            }
         }
 
         public void OnClientDisconnected(Client player, string reason)

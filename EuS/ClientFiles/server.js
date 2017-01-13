@@ -13,7 +13,6 @@ API.onServerEventTrigger.connect(function (eventName, args) {
                 API.waitUntilCefBrowserInit(cefLoginWindow);
                 API.loadPageCefBrowser(cefLoginWindow, "ClientFiles/pages/login/login.html");
                 if (API.isCefBrowserInitialized(cefLoginWindow)) {
-                    API.sleep(10);
                     if (!API.isCursorShown())
                         API.showCursor(true);
                 }
@@ -27,7 +26,6 @@ API.onServerEventTrigger.connect(function (eventName, args) {
                 API.waitUntilCefBrowserInit(cefRegisterWindow);
                 API.loadPageCefBrowser(cefRegisterWindow, "ClientFiles/pages/login/register.html");
                 if (API.isCefBrowserInitialized(cefRegisterWindow)) {
-                    API.sleep(10);
                     if(!API.isCursorShown())
                         API.showCursor(true);
                 }
